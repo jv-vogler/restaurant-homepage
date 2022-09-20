@@ -1,0 +1,84 @@
+*,
+*::before,
+*::after {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+/* SETUP */
+:root {
+  --accent: #CC0025;
+  --black: #1E1E1E;
+  --white: #F5F5F5;
+  --nav-inactive: #E0E0E0;
+  --nav-active: #FFFFFF;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  color: var(--white);
+  background-color: var(--black);
+}
+
+.content { 
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* NAV */
+.nav-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 25px 75px;
+  border-bottom: 1px solid var(--white);
+}
+
+.logo {
+  font-family: Knewave;
+  font-size: 64px;
+  transform: translateY(-8px);
+}
+
+.first-letter {
+  color: var(--accent)
+}
+
+.nav-menu {
+  display: flex;
+  gap: 30px;
+  justify-self: center;
+  font-weight: 600;
+  color: var(--nav-inactive);
+}
+
+.active {
+  color: var(--nav-active);
+  padding-bottom: 5px;
+  border-bottom: 5px solid var(--accent);
+  pointer-events: none;
+}
+
+.item {
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .4s;
+}
+
+.item:hover {
+  color: var(--nav-active);
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.fa-brands {
+  font-size: 25px;
+}
