@@ -1,4 +1,15 @@
+import "./style.css"
+import Home from "./components/home";
+import Menu from "./components/menu";
+import Contact from "./components/contact";
+
 const CONTENT = document.querySelector("#content");
+
+const loadPage = () => {
+  createNav();
+  createMain();
+  createFooter();
+};
 
 // NAV Setup
 const NAV = document.createElement("nav");
@@ -25,8 +36,9 @@ const createNavMenu = (...menuItems) => {
   menu.classList.add("nav-menu");
   for (const item of menuItems) {
     const i = document.createElement("li");
-    i.classList.add("item");
+    item.toUpperCase() === 'HOME' ? i.classList.add("item", "active") : i.classList.add("item");
     i.textContent = item;
+    i.addEventListener('click', changeMenu);
     menu.appendChild(i);
   }
   return menu;
@@ -48,9 +60,9 @@ const MAIN = document.createElement("div");
 MAIN.classList.add("main");
 
 const createMain = () => {
-  MAIN.textContent = 'main placeholder'
+  MAIN.appendChild(Home());
   CONTENT.appendChild(MAIN);
-}
+};
 
 // FOOTER Setup
 const FOOTER = document.createElement("footer");
@@ -66,10 +78,26 @@ const createFooter = () => {
 // Utility
 const firstLetter = (letter) => {
   const sp = document.createElement("span");
+  sp.classList.add('first-letter');
   sp.textContent = letter.toUpperCase();
   return sp;
 };
 
-createNav();
-createMain();
-createFooter();
+const changeMenu = (e) => {
+  const clickedMenuText = e.target.innerText.toUpperCase();
+  if (document.querySelector('.active')) {
+    document.querySelector('.active').classList.remove('active');
+  }
+  e.target.classList.add('active')
+  
+  MAIN.firstChild.remove();
+  if (clickedMenuText === 'HOME') {
+    MAIN.appendChild(Home())
+  } else if (clickedMenuText === 'MENU') {
+    MAIN.appendChild(Menu())
+  } else if (clickedMenuText === 'CONTACT') {
+    MAIN.appendChild(Contact())
+  }
+};
+
+loadPage();
