@@ -1,5 +1,32 @@
+import { createContainer, createTextElement } from "./utils";
+
 export default function Home() {
-  const h = document.createElement('div');
-  h.textContent = 'Home content'
-  return h;
+  const wrapper = createContainer("div", "main-wrapper");
+  wrapper.classList.add("main-wrapper--home");
+
+  const hero = createContainer("div", "hero");
+  const header = createTextElement("h3","header",
+    "Lorem ipsum dolor sit amet."
+  );
+  const paragraph = createTextElement("p", "txt",
+    `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error est
+  sit aliquid? Quibusdam, assumenda? Voluptatem cumque et nesciunt.
+  Expedita, praesentium sequi. Doloribus reprehenderit consequuntur
+  soluta.`
+  );
+  const btn = createTextElement("button", "btn", "View Menu");
+  const img = createPicture();
+
+  hero.append(header, paragraph, btn);
+  wrapper.append(hero, img);
+
+  return wrapper;
+}
+
+const createPicture = () => {
+  const img = document.createElement("img");
+  img.src = "../src/images/pic1.png";
+  img.alt = "japanese food picture";
+  img.classList.add('image');
+  return img
 }
