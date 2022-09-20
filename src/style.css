@@ -24,7 +24,7 @@ body {
   background-color: var(--black);
 }
 
-.content { 
+#content { 
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -35,8 +35,12 @@ body {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
+  width: 100%;
+  position: fixed;
   padding: 25px 75px;
   border-bottom: 1px solid var(--white);
+  background-color: var(--black);
+  z-index: 100;
 }
 
 .logo {
@@ -56,6 +60,7 @@ body {
   justify-self: center;
   font-weight: 600;
   color: var(--nav-inactive);
+  transform: translateX(-100px);
 }
 
 .active {
@@ -106,4 +111,108 @@ body {
 .fa-brands:hover {
   transform: translateY(-5px);
   color: var(--nav-active);
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-wrapper {
+  flex: 1;
+}
+
+.main-wrapper--home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 160px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.hero {
+  margin-left: 190px;
+  flex: 1.1;
+}
+
+.header, .txt {
+  max-width: 700px;
+}
+
+.header {
+  font-size: 86px;
+  font-weight: normal;
+  line-height: 1.1;
+  margin-bottom: 40px;
+}
+
+.txt {
+  font-size: 20px;
+  margin-bottom: 41px;
+  max-width: 600px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 200px;
+  height: 70px;
+  border: none;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: inherit;
+  background-color: var(--accent);
+  cursor: pointer;
+  transition: all .4s;
+  z-index: 1;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-color: var(--white);
+  transform: scaleX(0);
+  transition: all .4s;
+  transform-origin: left;
+}
+
+.btn:hover,
+.btn:focus {
+  color: var(--accent);
+}
+
+.btn:hover::before,
+.btn:focus::before {
+  transform: scaleX(1);
+}
+
+.image {
+  flex: 0.9;
+  width: 50%;
+  height: auto;
+}
+
+/* FOOTER */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  padding: 20px 0;
+  flex-shrink: 0;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, .4);
 }
