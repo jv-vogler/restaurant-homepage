@@ -1,3 +1,4 @@
+import "./style.css"
 import Home from "./components/home";
 import Menu from "./components/menu";
 import Contact from "./components/contact";
@@ -76,6 +77,7 @@ const createFooter = () => {
 // Utility
 const firstLetter = (letter) => {
   const sp = document.createElement("span");
+  sp.classList.add('first-letter');
   sp.textContent = letter.toUpperCase();
   return sp;
 };
