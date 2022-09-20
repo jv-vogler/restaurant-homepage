@@ -1,4 +1,14 @@
+import Home from "./components/home";
+import Menu from "./components/menu";
+import Contact from "./components/contact";
+
 const CONTENT = document.querySelector("#content");
+
+const loadPage = () => {
+  createNav();
+  createMain();
+  createFooter();
+};
 
 // NAV Setup
 const NAV = document.createElement("nav");
@@ -48,9 +58,9 @@ const MAIN = document.createElement("div");
 MAIN.classList.add("main");
 
 const createMain = () => {
-  MAIN.textContent = 'main placeholder'
+  MAIN.appendChild(Home());
   CONTENT.appendChild(MAIN);
-}
+};
 
 // FOOTER Setup
 const FOOTER = document.createElement("footer");
@@ -70,6 +80,4 @@ const firstLetter = (letter) => {
   return sp;
 };
 
-createNav();
-createMain();
-createFooter();
+loadPage();
