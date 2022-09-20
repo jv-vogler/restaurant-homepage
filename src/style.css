@@ -14,7 +14,7 @@ li {
   --accent: #CC0025;
   --black: #1E1E1E;
   --white: #F5F5F5;
-  --nav-inactive: #E0E0E0;
+  --nav-inactive: #afafaf;
   --nav-active: #FFFFFF;
 }
 
@@ -43,6 +43,7 @@ body {
   font-family: Knewave;
   font-size: 64px;
   transform: translateY(-8px);
+  user-select: none;
 }
 
 .first-letter {
@@ -58,15 +59,30 @@ body {
 }
 
 .active {
+  position: relative;
   color: var(--nav-active);
-  padding-bottom: 5px;
-  border-bottom: 5px solid var(--accent);
   pointer-events: none;
+}
+
+.active::after {
+  content: "";
+  height: 3px;
+  width: 100%;
+  left: 0;
+  bottom: -10px;
+  position: absolute;
+  background-color: var(--accent);
+  transition: 0.4s
+}
+
+.active:hover::after {
+  width: 0;
 }
 
 .item {
   text-transform: uppercase;
   cursor: pointer;
+  user-select: none;
   transition: all .4s;
 }
 
@@ -81,4 +97,12 @@ body {
 
 .fa-brands {
   font-size: 25px;
+  cursor: pointer;
+  transition: all .4s;
+  color: var(--nav-inactive);
+}
+
+.fa-brands:hover {
+  transform: translateY(-5px);
+  color: var(--nav-active);
 }
