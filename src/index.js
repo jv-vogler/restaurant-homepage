@@ -36,8 +36,9 @@ const createNavMenu = (...menuItems) => {
   menu.classList.add("nav-menu");
   for (const item of menuItems) {
     const i = document.createElement("li");
-    i.classList.add("item");
+    item.toUpperCase() === 'HOME' ? i.classList.add("item", "active") : i.classList.add("item");
     i.textContent = item;
+    i.addEventListener('click', changeMenu);
     menu.appendChild(i);
   }
   return menu;
@@ -80,6 +81,23 @@ const firstLetter = (letter) => {
   sp.classList.add('first-letter');
   sp.textContent = letter.toUpperCase();
   return sp;
+};
+
+const changeMenu = (e) => {
+  const clickedMenuText = e.target.innerText.toUpperCase();
+  if (document.querySelector('.active')) {
+    document.querySelector('.active').classList.remove('active');
+  }
+  e.target.classList.add('active')
+  
+  MAIN.firstChild.remove();
+  if (clickedMenuText === 'HOME') {
+    MAIN.appendChild(Home())
+  } else if (clickedMenuText === 'MENU') {
+    MAIN.appendChild(Menu())
+  } else if (clickedMenuText === 'CONTACT') {
+    MAIN.appendChild(Contact())
+  }
 };
 
 loadPage();
