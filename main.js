@@ -126,7 +126,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Home)\n/* harmony export */ });\nfunction Home() {\r\n  const h = document.createElement('div');\r\n  h.textContent = 'Home content'\r\n  return h;\r\n}\n\n//# sourceURL=webpack://odin-restaurant/./src/components/home.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Home)\n/* harmony export */ });\n/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ \"./src/components/utils.js\");\n\r\n\r\nfunction Home() {\r\n  const wrapper = (0,_utils__WEBPACK_IMPORTED_MODULE_0__.createContainer)(\"div\", \"main-wrapper\");\r\n  wrapper.classList.add(\"main-wrapper--home\");\r\n\r\n  const hero = (0,_utils__WEBPACK_IMPORTED_MODULE_0__.createContainer)(\"div\", \"hero\");\r\n  const header = (0,_utils__WEBPACK_IMPORTED_MODULE_0__.createTextElement)(\"h3\",\"header\",\r\n    \"Lorem ipsum dolor sit amet.\"\r\n  );\r\n  const paragraph = (0,_utils__WEBPACK_IMPORTED_MODULE_0__.createTextElement)(\"p\", \"txt\",\r\n    `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error est\r\n  sit aliquid? Quibusdam, assumenda? Voluptatem cumque et nesciunt.\r\n  Expedita, praesentium sequi. Doloribus reprehenderit consequuntur\r\n  soluta.`\r\n  );\r\n  const btn = (0,_utils__WEBPACK_IMPORTED_MODULE_0__.createTextElement)(\"button\", \"btn\", \"View Menu\");\r\n  const img = createPicture();\r\n\r\n  hero.append(header, paragraph, btn);\r\n  wrapper.append(hero, img);\r\n\r\n  return wrapper;\r\n}\r\n\r\nconst createPicture = () => {\r\n  const img = document.createElement(\"img\");\r\n  img.src = \"../src/images/pic1.png\";\r\n  img.alt = \"japanese food picture\";\r\n  img.classList.add('image');\r\n  return img\r\n}\r\n\n\n//# sourceURL=webpack://odin-restaurant/./src/components/home.js?");
 
 /***/ }),
 
@@ -137,6 +137,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Menu)\n/* harmony export */ });\nfunction Menu() {\r\n  const h = document.createElement('div');\r\n  h.textContent = 'Menu content'\r\n  return h;\r\n}\n\n//# sourceURL=webpack://odin-restaurant/./src/components/menu.js?");
+
+/***/ }),
+
+/***/ "./src/components/utils.js":
+/*!*********************************!*\
+  !*** ./src/components/utils.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"createContainer\": () => (/* binding */ createContainer),\n/* harmony export */   \"createTextElement\": () => (/* binding */ createTextElement)\n/* harmony export */ });\nconst createContainer = (elType, elClass) => {\r\n  const element = document.createElement(`${elType}`);\r\n  element.classList.add(`${elClass}`);\r\n  return element;\r\n};\r\n\r\nconst createTextElement = (elType, elClass, elText) => {\r\n  const element = createContainer(elType, elClass);\r\n  element.textContent = elText;\r\n  return element;\r\n};\n\n//# sourceURL=webpack://odin-restaurant/./src/components/utils.js?");
 
 /***/ }),
 
