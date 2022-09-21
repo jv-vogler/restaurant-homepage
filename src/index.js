@@ -2,21 +2,22 @@ import "./style.css"
 import Home from "./components/home";
 import Menu from "./components/menu";
 import Contact from "./components/contact";
+import { createContainer } from "./components/utils";
 
 const CONTENT = document.querySelector("#content");
+const NAV = createContainer("nav", "nav-wrapper");
+const MAIN = createContainer("div", "main");
+const FOOTER = createContainer("footer", "footer");
+
 let timeline = null;
 
 const loadPage = () => {
   createNav();
   createMain();
   createFooter();
-  animate();
 };
 
 // NAV Setup
-const NAV = document.createElement("nav");
-NAV.classList.add("nav-wrapper");
-
 const createNav = () => {
   NAV.append(
     createLogo(),
@@ -27,15 +28,13 @@ const createNav = () => {
 };
 
 const createLogo = () => {
-  const logo = document.createElement("h1");
-  logo.classList.add("logo");
+  const logo = createContainer("h1", "logo");
   logo.append(firstLetter("S"), "ushi ", firstLetter("O"), "asis");
   return logo;
 };
 
 const createNavMenu = (...menuItems) => {
-  const menu = document.createElement("ul");
-  menu.classList.add("nav-menu");
+  const menu = createContainer("ul", "nav-menu");
   for (const item of menuItems) {
     const i = document.createElement("li");
     item.toUpperCase() === 'HOME' ? i.classList.add("item", "active") : i.classList.add("item");
@@ -47,8 +46,7 @@ const createNavMenu = (...menuItems) => {
 };
 
 const createSocialMenu = (...brandName) => {
-  const menu = document.createElement("section");
-  menu.classList.add("social-icons");
+  const menu = createContainer("section", "social-icons");
   for (const item of brandName) {
     const i = document.createElement("i");
     i.classList.add("fa-brands", `fa-${item.toLowerCase()}`);
@@ -58,18 +56,13 @@ const createSocialMenu = (...brandName) => {
 };
 
 // MAIN Setup
-const MAIN = document.createElement("div");
-MAIN.classList.add("main");
-
 const createMain = () => {
   MAIN.appendChild(Home());
   CONTENT.appendChild(MAIN);
+  animate();
 };
 
 // FOOTER Setup
-const FOOTER = document.createElement("footer");
-FOOTER.classList.add("footer");
-
 const createFooter = () => {
   const foo = document.createElement("small");
   foo.textContent = "\u00A9 2022 Sushi Oasis. All rights reserved.";
