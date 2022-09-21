@@ -2,14 +2,12 @@ import "./style.css"
 import Home from "./components/home";
 import Menu from "./components/menu";
 import Contact from "./components/contact";
-import { createContainer, firstLetter } from "./components/utils";
+import { createContainer, changeMainContent, firstLetter } from "./components/utils";
 
 const CONTENT = document.querySelector("#content");
 const NAV = createContainer("nav", "nav-wrapper");
 const MAIN = createContainer("div", "main");
 const FOOTER = createContainer("footer", "footer");
-
-let timeline = null;
 
 const loadPage = () => {
   createNav();
@@ -39,7 +37,7 @@ const createNavMenu = (...menuItems) => {
     const i = document.createElement("li");
     i.classList.add("item");
     i.textContent = item;
-    i.addEventListener("click", (e) => changeContent(e.target.innerText));
+    i.addEventListener("click", (e) => changeMainContent(e.target.innerText));
     menu.appendChild(i);
   }
   return menu;
@@ -59,8 +57,7 @@ const createSocialMenu = (...brandName) => {
 const createMain = () => {
   MAIN.appendChild(Home());
   CONTENT.appendChild(MAIN);
-  changeContent("home");
-  animate();
+  changeMainContent("Home");
 };
 
 // Footer Setup
@@ -71,42 +68,5 @@ const createFooter = () => {
   CONTENT.appendChild(FOOTER);
 };
 
-// Support
-const animate = function() {
-  timeline = gsap.timeline({repeat: -1});
-  timeline.set(".image", {attr: { src: "../src/images/pic1.png" }})
-  timeline.from(".image", {duration: 2, x: 1000, ease: "circ"})
-  timeline.from(".image", {duration: 2, x: 0, ease: "expo.in"}, "+=3")
-
-  timeline.set(".image", {attr: { src: "../src/images/pic2.png" }})
-  timeline.from(".image", {duration: 2, x: 1000, ease: "circ"})
-  timeline.from(".image", {duration: 2, x: 0, ease: "expo.in"}, "+=3")
-
-  timeline.set(".image", {attr: { src: "../src/images/pic3.png" }})
-  timeline.from(".image", {duration: 2, x: 1000, ease: "circ"})
-  timeline.from(".image", {duration: 2, x: 0, ease: "expo.in"}, "+=3")
-};
-
-const changeContent = (page) => {
-  const nav = document.querySelector(".nav-menu");
-  page = page.toUpperCase();
-
-  if (document.querySelector(".active")) {
-    document.querySelector(".active").classList.remove("active");
-  }
-
-  MAIN.firstChild.remove();
-  if (page === "HOME") {
-    MAIN.appendChild(Home());
-    animate();
-    nav.childNodes[0].classList.add("active");
-  } else if (page === "MENU") {
-    MAIN.appendChild(Menu());
-    nav.childNodes[1].classList.add("active");
-  } else if (page === "CONTACT") {
-    MAIN.appendChild(Contact());
-    nav.childNodes[2].classList.add("active");
-  }
-};
 
 loadPage();
