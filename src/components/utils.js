@@ -9,3 +9,10 @@ export const createTextElement = (elType, elClass, elText) => {
   element.textContent = elText;
   return element;
 };
+
+export const firstLetter = (letter) => {
+  const sp = createContainer("span", "first-letter");
+  sp.textContent = letter.toUpperCase();
+  return sp;
+};
+
