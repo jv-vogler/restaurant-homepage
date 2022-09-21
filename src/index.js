@@ -2,7 +2,7 @@ import "./style.css"
 import Home from "./components/home";
 import Menu from "./components/menu";
 import Contact from "./components/contact";
-import { createContainer, changeMainContent, firstLetter } from "./components/utils";
+import { createContainer, changeMainContent, firstLetter, createTextElement } from "./components/utils";
 
 const CONTENT = document.querySelector("#content");
 const NAV = createContainer("nav", "nav-wrapper");
@@ -65,6 +65,13 @@ const createFooter = () => {
   const foo = document.createElement("small");
   foo.textContent = "\u00A9 2022 Sushi Oasis. All rights reserved.";
   FOOTER.appendChild(foo);
+
+  const attribution = createTextElement("a", "attribution", "Images by luis_molinero on Freepik");
+  attribution.setAttribute('href', 
+  "https://www.freepik.com/free-photo/hand-holding-sushi-with-chopsticks_1198655.htm#&position=0&from_view=detail#&position=0&from_view=detail")
+  attribution.setAttribute('target', '_blank');
+  
+  FOOTER.appendChild(attribution);
   CONTENT.appendChild(FOOTER);
 };
 

@@ -210,9 +210,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   margin-top: auto;
   padding: 20px 0;
   flex-shrink: 0;
   font-size: 16px;
   background-color: rgba(0, 0, 0, .4);
+}
+
+.attribution {
+  position: absolute;
+  right: 2%;
+  color: var(--nav-inactive);
+  font-size: 0.65rem;
+  text-decoration: none;
+  transition: all 0.4s;
+}
+
+.attribution:hover {
+  color: var(--nav-active);
 }
