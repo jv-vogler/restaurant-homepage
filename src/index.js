@@ -42,9 +42,11 @@ const createNavMenu = (...menuItems) => {
   });
 
   for (const item of menuItems) {
-    const i = document.createElement("li");
-    i.classList.add("item");
-    i.textContent = item;
+    const i = createEl({
+      elTag: "li",
+      elClasses: "item",
+      elTxt: item
+    });
     i.addEventListener("click", (e) => changeMainContent(e.target.innerText));
     menu.appendChild(i);
   }
@@ -58,8 +60,10 @@ const createSocialMenu = (...brandName) => {
     elClasses: "social-icons",
   });
   for (const item of brandName) {
-    const i = document.createElement("i");
-    i.classList.add("fa-brands", `fa-${item.toLowerCase()}`);
+    const i = createEl({
+      elType: "i",
+      elClasses: ["fa-brands", `fa-${item.toLowerCase()}`]
+    })
     menu.appendChild(i);
   }
 
