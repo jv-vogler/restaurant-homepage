@@ -1,13 +1,13 @@
-import "./style.css"
+import "./style.css";
 import Home from "./components/home";
 import Menu from "./components/menu";
 import Contact from "./components/contact";
-import { createContainer, changeMainContent, firstLetter, createTextElement } from "./components/utils";
+import { createEl, changeMainContent, firstLetter } from "./components/utils";
 
 const CONTENT = document.querySelector("#content");
-const NAV = createContainer("nav", "nav-wrapper");
-const MAIN = createContainer("div", "main");
-const FOOTER = createContainer("footer", "footer");
+const NAV = createEl({ elTag: "nav", elClasses: "nav-wrapper" });
+const MAIN = createEl({ elTag: "div", elClasses: "main" });
+const FOOTER = createEl({ elTag: "footer", elClasses: "footer" });
 
 const loadPage = () => {
   createNav();
@@ -26,13 +26,21 @@ const createNav = () => {
 };
 
 const createLogo = () => {
-  const logo = createContainer("h1", "logo");
+  const logo = createEl({
+    elTag: "h1",
+    elClasses: "logo",
+  });
   logo.append(firstLetter("S"), "ushi ", firstLetter("O"), "asis");
+
   return logo;
 };
 
 const createNavMenu = (...menuItems) => {
-  const menu = createContainer("ul", "nav-menu");
+  const menu = createEl({
+    elTag: "ul",
+    elClasses: "nav-menu",
+  });
+
   for (const item of menuItems) {
     const i = document.createElement("li");
     i.classList.add("item");
@@ -40,16 +48,21 @@ const createNavMenu = (...menuItems) => {
     i.addEventListener("click", (e) => changeMainContent(e.target.innerText));
     menu.appendChild(i);
   }
+
   return menu;
 };
 
 const createSocialMenu = (...brandName) => {
-  const menu = createContainer("section", "social-icons");
+  const menu = createEl({
+    elTag: "section",
+    elClasses: "social-icons",
+  });
   for (const item of brandName) {
     const i = document.createElement("i");
     i.classList.add("fa-brands", `fa-${item.toLowerCase()}`);
     menu.appendChild(i);
   }
+
   return menu;
 };
 
@@ -62,18 +75,23 @@ const createMain = () => {
 
 // Footer Setup
 const createFooter = () => {
-  const foo = document.createElement("small");
-  foo.textContent = "\u00A9 2022 Sushi Oasis. All rights reserved.";
+  const foo = createEl({
+    elTag: "small",
+    elTxt: "\u00A9 2022 Sushi Oasis. All rights reserved.",
+  });
   FOOTER.appendChild(foo);
 
-  const attribution = createTextElement("a", "attribution", "Images by luis_molinero on Freepik");
-  attribution.setAttribute('href', 
-  "https://www.freepik.com/free-photo/hand-holding-sushi-with-chopsticks_1198655.htm#&position=0&from_view=detail#&position=0&from_view=detail")
-  attribution.setAttribute('target', '_blank');
-  
+  const attribution = createEl({
+    elTag: "a",
+    elClasses: "attribution",
+    elTxt: "Images by luis_molinero on Freepik",
+  });
+  attribution.setAttribute("href",
+    "https://www.freepik.com/free-photo/hand-holding-sushi-with-chopsticks_1198655.htm#&position=0&from_view=detail#&position=0&from_view=detail");
+  attribution.setAttribute("target", "_blank");
+
   FOOTER.appendChild(attribution);
   CONTENT.appendChild(FOOTER);
 };
-
 
 loadPage();

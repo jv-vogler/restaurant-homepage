@@ -27,20 +27,32 @@ export const changeMainContent = (page) => {
   }
 };
 
-export const createContainer = (elType, elClass) => {
-  const element = document.createElement(`${elType}`);
-  element.classList.add(`${elClass}`);
-  return element;
-};
+export const createEl = (arg) => {
+  /**
+    * Returns an HTML Element with specified params. 
+    * @param {Object}       arg             Object container.
+    * @param {String}       arg.elTag       If not specified creates a <div>.
+    * @param {String/Array} arg.ElClasses   If specified adds one or more classes to the element.
+    * @param {String}       arg.elTxt       If specified adds it as textContent to the element.
+    */
+  const tag = arg.elTag ? arg.elTag : 'div';
+  const element = document.createElement(tag);
 
-export const createTextElement = (elType, elClass, elText) => {
-  const element = createContainer(elType, elClass);
-  element.textContent = elText;
+  if (arg.elClasses) {
+    if (typeof arg.elClasses === 'string') {
+      element.classList.add(arg.elClasses)
+    } else if (Array.isArray(arg.elClasses)) {
+      element.classList.add(...arg.elClasses)
+    }
+  };
+
+  if (arg.elTxt) element.textContent = arg.elTxt;
+
   return element;
 };
 
 export const firstLetter = (letter) => {
-  const sp = createContainer("span", "first-letter");
+  const sp = createEl({ elTag: "span", elClasses: "first-letter" });
   sp.textContent = letter.toUpperCase();
   return sp;
 };

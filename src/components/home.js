@@ -1,21 +1,37 @@
-import { createContainer, changeMainContent, createTextElement } from "./utils";
+import { createEl, changeMainContent } from "./utils";
 
 export default function Home() {
-  const wrapper = createContainer("div", "main-wrapper");
-  wrapper.classList.add("main-wrapper--home");
+  const wrapper = createEl({
+    elTag: "div",
+    elClasses: ["main-wrapper", "main-wrapper--home"]
+  })
 
-  const hero = createContainer("div", "hero");
-  const header = createTextElement("h3","header",
-    "Lorem ipsum dolor sit amet.");
+  const hero = createEl({
+    elTag: "div", 
+    elClasses: ['hero', 'hero-special']
+  })
 
-  const paragraph = createTextElement("p", "txt",
-    `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error est
-  sit aliquid? Quibusdam, assumenda? Voluptatem cumque et nesciunt.
-  Expedita, praesentium sequi. Doloribus reprehenderit consequuntur
-  soluta.`);
+  const header = createEl({
+    elTag: "h3", 
+    elClasses: "header", 
+    elTxt: "Lorem ipsum dolor sit amet."
+  })
+  
+  const paragraph = createEl({
+    elTag: "p",
+    elClasses: "txt",
+    elTxt: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error est
+    sit aliquid? Quibusdam, assumenda? Voluptatem cumque et nesciunt.
+    Expedita, praesentium sequi. Doloribus reprehenderit consequuntur
+    soluta.`
+  })
 
-  const btn = createTextElement("button", "btn", "View Menu");
-  btn.addEventListener('click', () => changeMainContent("Menu"));
+  const btn = createEl({
+    elTag: "button",
+    elClasses: "btn",
+    elTxt: "View Menu"
+  })
+  btn.addEventListener("click", () => changeMainContent("Menu"));
   
   const img = createPicture();
 
@@ -25,7 +41,10 @@ export default function Home() {
 }
 
 const createPicture = () => {
-  const img = createContainer("img", "image");
+  const img = createEl({
+    elTag: "img",
+    elClasses: "image"
+  })
   img.src = "../src/images/pic1.png";
   img.alt = "japanese food picture";
   return img
