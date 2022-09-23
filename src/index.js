@@ -45,7 +45,8 @@ const createNavMenu = (...menuItems) => {
     const i = createEl({
       elTag: "li",
       elClasses: "item",
-      elTxt: item
+      elTxt: item,
+      dataAttr: { key: item.toLowerCase() }
     });
     i.addEventListener("click", (e) => changeMainContent(e.target.innerText));
     menu.appendChild(i);

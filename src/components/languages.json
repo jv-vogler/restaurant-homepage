@@ -1,0 +1,18 @@
+{
+  "languages": {
+    "en": {
+      "strings": {
+        "home": "Home",
+        "menu": "Menu",
+        "contact": "Contact"
+      }
+    },
+    "pt": {
+      "strings": {
+        "home": "Início",
+        "menu": "Menu",
+        "contact": "Contato"
+      }
+    }
+  }
+}
