@@ -1,7 +1,8 @@
 *,
 *::before,
 *::after {
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -11,11 +12,11 @@ li {
 
 /* SETUP */
 :root {
-  --accent: #CC0025;
-  --black: #1E1E1E;
-  --white: #F5F5F5;
+  --accent: #cc0025;
+  --black: #1e1e1e;
+  --white: #f5f5f5;
   --nav-inactive: #afafaf;
-  --nav-active: #FFFFFF;
+  --nav-active: #ffffff;
 }
 
 body {
@@ -24,7 +25,7 @@ body {
   background-color: var(--black);
 }
 
-#content { 
+#content {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -51,7 +52,7 @@ body {
 }
 
 .first-letter {
-  color: var(--accent)
+  color: var(--accent);
 }
 
 .nav-menu {
@@ -67,7 +68,7 @@ body {
   position: relative;
   color: var(--nav-active);
   pointer-events: none;
-  text-shadow: 0 0 8px rgba(255, 255, 255, .25);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
 }
 
 .active::after {
@@ -89,7 +90,7 @@ body {
   text-transform: uppercase;
   cursor: pointer;
   user-select: none;
-  transition: all .4s;
+  transition: all 0.4s;
 }
 
 .item:hover {
@@ -104,7 +105,7 @@ body {
 .fa-brands {
   font-size: 25px;
   cursor: pointer;
-  transition: all .4s;
+  transition: all 0.4s;
   color: var(--nav-inactive);
 }
 
@@ -139,7 +140,8 @@ body {
   flex: 1.1;
 }
 
-.header, .txt {
+.header,
+.txt {
   max-width: 700px;
 }
 
@@ -171,12 +173,12 @@ body {
   color: inherit;
   background-color: var(--accent);
   cursor: pointer;
-  transition: all .4s;
+  transition: all 0.4s;
   z-index: 1;
 }
 
 .btn::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -185,7 +187,7 @@ body {
   z-index: -1;
   background-color: var(--white);
   transform: scaleX(0);
-  transition: all .4s;
+  transition: all 0.4s;
   transform-origin: left;
 }
 
@@ -215,7 +217,7 @@ body {
   padding: 20px 0;
   flex-shrink: 0;
   font-size: 16px;
-  background-color: rgba(0, 0, 0, .4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .attribution {
