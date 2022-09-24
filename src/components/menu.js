@@ -1,5 +1,13 @@
+import { createEl } from "./utils";
+
 export default function Menu() {
-  const h = document.createElement('div');
-  h.textContent = 'Menu content'
-  return h;
+  const wrapper = createEl({
+    elTag: "div",
+    elClasses: ["main-wrapper", "main-wrapper--menu"],
+    elTxt: "Menu"
+  });
+
+
+  
+  return wrapper
 }

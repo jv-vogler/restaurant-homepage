@@ -10,6 +10,19 @@ li {
   list-style: none;
 }
 
+/* KEYFRAMES */
+@keyframes move-to-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 /* SETUP */
 :root {
   --accent: #cc0025;
@@ -177,18 +190,20 @@ body {
   flex: 1;
 }
 
+/* HOME */
 .main-wrapper--home {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 160px;
+  padding-top: 11rem;
   overflow-y: auto;
   overflow-x: hidden;
+  position: relative;
 }
 
 .hero {
-  margin-left: 7rem;
-  flex: 1.1;
+  margin-left: 8rem;
+  flex: 1;
 }
 
 .header {
@@ -196,12 +211,15 @@ body {
   font-weight: normal;
   line-height: 1.1;
   margin-bottom: 40px;
+  max-width: 600px;
+  animation: move-to-right 1.8s;
 }
 
 .txt {
   font-size: 20px;
   margin-bottom: 41px;
   max-width: 600px;
+  animation: move-to-right 1.8s .1s backwards;
 }
 
 .btn {
@@ -221,6 +239,7 @@ body {
   cursor: pointer;
   transition: all 0.4s;
   z-index: 1;
+  animation: move-to-right 1s .5s backwards;
 }
 
 .btn::before {
@@ -248,10 +267,17 @@ body {
 }
 
 .image {
-  flex: 0.8;
+  flex: 1;
   width: 50%;
-  height: auto;
 }
+
+/* MENU */
+.main-wrapper--menu {
+  display: flex;
+  justify-content: center;
+}
+
+/* CONTACT */
 
 /* FOOTER */
 .footer {

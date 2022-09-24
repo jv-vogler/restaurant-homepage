@@ -15,7 +15,7 @@ export default function Home() {
     elTag: "h3",
     elClasses: "header",
     elTxt: "The paradise for sushi lovers.",
-    dataAttr: { key: "hero-header" }
+    dataAttr: { key: "hero-header" },
   });
 
   const paragraph = createEl({
@@ -25,7 +25,7 @@ export default function Home() {
     sit aliquid? Quibusdam, assumenda? Voluptatem cumque et nesciunt.
     Expedita, praesentium sequi. Doloribus reprehenderit consequuntur
     soluta.`,
-    dataAttr: { key: "hero-paragraph" }
+    dataAttr: { key: "hero-paragraph" },
   });
 
   const btn = createEl({
@@ -40,6 +40,7 @@ export default function Home() {
 
   hero.append(header, paragraph, btn);
   wrapper.append(hero, img);
+
   return wrapper;
 }
 
@@ -50,5 +51,6 @@ const createPicture = () => {
   });
   img.src = "../src/images/pic1.png";
   img.alt = "japanese food picture";
+
   return img;
 };

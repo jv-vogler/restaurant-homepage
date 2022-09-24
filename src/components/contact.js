@@ -1,5 +1,13 @@
+import { createEl } from "./utils";
+
 export default function Contact() {
-  const h = document.createElement('div');
-  h.textContent = 'Contact content'
-  return h;
+  const wrapper = createEl({
+    elTag: "div",
+    elClasses: ["main-wrapper", "main-wrapper--contact"],
+    elTxt: "Contact"
+  });
+
+  
+  
+  return wrapper
 }
