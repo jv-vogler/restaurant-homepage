@@ -5,7 +5,6 @@ let pageLang = document.querySelector("html").getAttribute("lang");
 export function setLanguage() {
   let locale = navigator.language.substring(0, 2);
   const toggleBtn = document.querySelector("#langToggle");
-  // locale = "fr"
   if (locale === "pt") {
     document.querySelector("html").setAttribute("lang", "pt");
     pageLang = "pt";

@@ -7,7 +7,9 @@
         "contact": "Contact",
         "copyright": "\u00A9 2022 Sushi Oasis. All rights reserved.",
         "menu-btn": "View Menu",
-        "picAttr": "Images by luis_molinero on Freepik"
+        "picAttr": "Images by luis_molinero on Freepik",
+        "hero-header": "The paradise for sushi lovers.",
+        "hero-paragraph": "The Sushi Oasis delivers food prepared with fresh and high-quality ingredients made by Japanese cuisine lovers. Our mission is to provide the most genuine experience you have ever tasted!"
       }
     },
     "pt": {
@@ -17,7 +19,9 @@
         "contact": "Contato",
         "copyright": "\u00A9 2022 Sushi Oasis. Todos os direitos reservados.",
         "menu-btn": "Ver Menu",
-        "picAttr": "Imagens por luis_molinero em Freepik"
+        "picAttr": "Imagens por luis_molinero em Freepik",
+        "hero-header": "O paraíso para amantes de sushi.",
+        "hero-paragraph": "O Sushi Oasis entrega comida preparada com ingredientes frescos e de alta qualidade, feita por apaixonados pela culinária Japonesa. Nossa missão é proporcionar a experiência mais genuína que você já experimentou!"
       }
     }
   }
