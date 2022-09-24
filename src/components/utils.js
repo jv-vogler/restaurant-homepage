@@ -26,7 +26,7 @@ export const changeMainContent = (page) => {
     MAIN.appendChild(Contact());
     nav.childNodes[2].classList.add("active");
   }
-  document.documentElement.dispatchEvent(reload);
+  document.dispatchEvent(reload);
 };
 
 export const createEl = (arg) => {
