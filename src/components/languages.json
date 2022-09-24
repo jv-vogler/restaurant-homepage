@@ -4,14 +4,20 @@
       "strings": {
         "home": "Home",
         "menu": "Menu",
-        "contact": "Contact"
+        "contact": "Contact",
+        "copyright": "\u00A9 2022 Sushi Oasis. All rights reserved.",
+        "menu-btn": "View Menu",
+        "picAttr": "Images by luis_molinero on Freepik"
       }
     },
     "pt": {
       "strings": {
         "home": "Início",
         "menu": "Menu",
-        "contact": "Contato"
+        "contact": "Contato",
+        "copyright": "\u00A9 2022 Sushi Oasis. Todos os direitos reservados.",
+        "menu-btn": "Ver Menu",
+        "picAttr": "Imagens por luis_molinero em Freepik"
       }
     }
   }

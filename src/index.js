@@ -98,6 +98,7 @@ const createFooter = () => {
   const foo = createEl({
     elTag: "small",
     elTxt: "\u00A9 2022 Sushi Oasis. All rights reserved.",
+    dataAttr: { key: "copyright" },
   });
   FOOTER.appendChild(foo);
 
@@ -105,6 +106,7 @@ const createFooter = () => {
     elTag: "a",
     elClasses: "attribution",
     elTxt: "Images by luis_molinero on Freepik",
+    dataAttr: { key: "picAttr" }
   });
   attribution.setAttribute(
     "href",

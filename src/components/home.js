@@ -30,6 +30,7 @@ export default function Home() {
     elTag: "button",
     elClasses: "btn",
     elTxt: "View Menu",
+    dataAttr: { key: "menu-btn" },
   });
   btn.addEventListener("click", () => changeMainContent("Menu"));
 

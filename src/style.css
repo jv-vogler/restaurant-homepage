@@ -121,10 +121,11 @@ body {
   width: 20px;
   height: 10px;
   appearance: none;
-  background: linear-gradient(to right, rgb(255, 156, 176) 30%, green);
+  background: linear-gradient(to right, rgb(255, 190, 201) 30%, green);
   outline: none;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, .2);
   transition: .5s;
+  cursor: pointer;
 }
 
 .toggle {
