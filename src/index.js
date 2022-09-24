@@ -65,7 +65,7 @@ const createSocialMenu = (...brandName) => {
   });
   for (const item of brandName) {
     const i = createEl({
-      elType: "i",
+      elType: "div",
       elClasses: ["fa-brands", `fa-${item.toLowerCase()}`],
     });
     menu.appendChild(i);
@@ -81,7 +81,7 @@ const createLangToggle = () => {
   const checkbox = createEl({ elTag: "input", elClasses: "toggle__input" });
   checkbox.setAttribute("type", "checkbox");
   checkbox.setAttribute("id", "langToggle");
-
+  
   label.appendChild(checkbox);
   return label;
 };
