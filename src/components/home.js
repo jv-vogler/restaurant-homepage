@@ -2,7 +2,7 @@ import { createEl, changeMainContent } from "./utils";
 
 export default function Home() {
   const wrapper = createEl({
-    elTag: "div",
+    elTag: "section",
     elClasses: ["main-wrapper", "main-wrapper--home"],
   });
 

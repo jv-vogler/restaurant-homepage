@@ -65,7 +65,7 @@ const createSocialMenu = (...brandName) => {
   });
   for (const item of brandName) {
     const i = createEl({
-      elType: "div",
+      elType: "i",
       elClasses: ["fa-brands", `fa-${item.toLowerCase()}`],
     });
     menu.appendChild(i);

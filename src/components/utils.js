@@ -63,6 +63,10 @@ export const createEl = (arg) => {
     }
   }
 
+  if (arg.elHTML) {
+    element.innerHTML = arg.elHTML;
+  }
+
   return element;
 };
 
