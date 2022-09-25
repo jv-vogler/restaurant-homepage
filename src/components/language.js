@@ -40,6 +40,7 @@ function applyLanguage() {
     const lang = pageLang;
     if (key) {
       element.textContent = langdata.languages[lang].strings[key];
+      if (element.getAttribute("value")) element.setAttribute("value", langdata.languages[lang].strings[key])
     }
   });
 }

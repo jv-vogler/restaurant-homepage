@@ -11,13 +11,14 @@ export default function Contact() {
     elClasses: "contact-heading",
   });
 
-  contactHeading.appendChild(createEl({ elTag: "h2", elTxt: "Contact Us" }));
+  contactHeading.appendChild(createEl({ elTag: "h2", elTxt: "Contact Us", dataAttr: { key: "contact--header"}}));
   contactHeading.appendChild(
     createEl({
       elTag: "p",
       elTxt:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem at cupiditate cumque aperiam \
         eum aspernatur culpa deleniti, velit quaerat expedita quos. Distinctio quasi qui eveniet?",
+      dataAttr: { key: "contact--paragraph" }
     })
   );
 
@@ -27,22 +28,25 @@ export default function Contact() {
   contactInfo.appendChild(
     createBox(
       "Address",
-      "4671  Sugar Camp Road,<br>Owatonna,Minnesota,<br>55060",
-      '<i class="fa fa-map-marker" aria-hidden="true"></i>'
+      "1520  Av. Paulista,<br>São Paulo, São Paulo<br>01310-200",
+      '<i class="fa fa-map-marker" aria-hidden="true"></i>',
+      "contact--address"
     )
   );
   contactInfo.appendChild(
     createBox(
       "Phone",
-      "507-475-6094",
-      '<i class="fa fa-phone" aria-hidden="true"></i>'
+      "+55 (11)98765-4321",
+      '<i class="fa fa-phone" aria-hidden="true"></i>',
+      "contact--phone"
     )
   );
   contactInfo.appendChild(
     createBox(
       "Email",
-      "testmail@jsadiafs.com",
-      '<i class="fa-regular fa-envelope" aria-hidden="true"></i>'
+      "sushi@oasis.com",
+      '<i class="fa-regular fa-envelope" aria-hidden="true"></i>',
+      "contact--email"
     )
   );
 
@@ -56,14 +60,14 @@ export default function Contact() {
   return wrapper;
 }
 
-function createBox(hText, pText, iContent) {
+function createBox(hText, pText, iContent, dAttr) {
   const box = createEl({ eltag: "div", elClasses: "contact--box" });
 
   const icon = createEl({ elTag: "div", elClasses: "contact--icon" });
   icon.innerHTML = iContent;
 
   const text = createEl({ elTag: "div", elClasses: "contact--text" });
-  text.appendChild(createEl({ elTag: "h3", elTxt: `${hText}` }));
+  text.appendChild(createEl({ elTag: "h3", elTxt: `${hText}`, dataAttr: { key: `${dAttr}`} }));
   text.appendChild(createEl({ elTag: "p", elHTML: `${pText}` }));
 
   box.append(icon, text);
@@ -72,7 +76,7 @@ function createBox(hText, pText, iContent) {
 
 function createForm() {
   const form = createEl({ elTag: "form" });
-  const h = createEl({ elTag: "h2", elTxt: "Send Message" });
+  const h = createEl({ elTag: "h2", elTxt: "Send Message", dataAttr: { key: "contact--send-msg" } });
   const field1 = createEl({ elTag: "div", elClasses: "inputBox" });
   const field2 = createEl({ elTag: "div", elClasses: "inputBox" });
   const field3 = createEl({ elTag: "div", elClasses: "inputBox" });
@@ -83,7 +87,7 @@ function createForm() {
   input.setAttribute("type", "text");
   input.setAttribute("required", "required");
   field1.appendChild(input);
-  field1.appendChild(createEl({ elTag: "span", elTxt: "Full Name" }));
+  field1.appendChild(createEl({ elTag: "span", elTxt: "Full Name", dataAttr: { key: "contact--full-name" } }));
 
   input = createEl({ elTag: "input" });
   input.setAttribute("type", "text");
@@ -94,9 +98,9 @@ function createForm() {
   input = createEl({ elTag: "textarea" });
   input.setAttribute("required", "required");
   field3.appendChild(input);
-  field3.appendChild(createEl({ elTag: "span", elTxt: "Enter your message" }));
+  field3.appendChild(createEl({ elTag: "span", elTxt: "Enter your message", dataAttr: { key: "contact--enter-msg" } }));
 
-  input = createEl({ elTag: "input", elClasses: "form-btn" });
+  input = createEl({ elTag: "input", elClasses: "form-btn", dataAttr: { key: "contact--btn-txt" } });
   input.setAttribute("type", "submit");
   input.setAttribute("value", "send");
   field4.appendChild(input);

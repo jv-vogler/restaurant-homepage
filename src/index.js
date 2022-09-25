@@ -90,7 +90,7 @@ const createLangToggle = () => {
 const createMain = () => {
   MAIN.appendChild(Home());
   CONTENT.appendChild(MAIN);
-  changeMainContent("Contact");
+  changeMainContent("Home");
 };
 
 // Footer Setup
