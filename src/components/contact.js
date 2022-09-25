@@ -21,7 +21,8 @@ export default function Contact() {
     })
   );
 
-  const container = createEl({ elTag: "div", elClasss: "contact-container" });
+  const container = createEl({ elTag: "div", elClasses: "contact-container" });
+
   const contactInfo = createEl({ elTag: "div", elClasses: "contact-info" });
   contactInfo.appendChild(
     createBox(
@@ -50,6 +51,7 @@ export default function Contact() {
 
   container.appendChild(contactInfo);
   container.appendChild(formContainer);
+
   wrapper.append(contactHeading, container);
   return wrapper;
 }
@@ -80,14 +82,12 @@ function createForm() {
   input = createEl({ elTag: "input" });
   input.setAttribute("type", "text");
   input.setAttribute("required", "required");
-  // input.setAttribute("name", "")
   field1.appendChild(input);
   field1.appendChild(createEl({ elTag: "span", elTxt: "Full Name" }));
 
   input = createEl({ elTag: "input" });
   input.setAttribute("type", "text");
   input.setAttribute("required", "required");
-  // input.setAttribute("name", "")
   field2.appendChild(input);
   field2.appendChild(createEl({ elTag: "span", elTxt: "Email" }));
 
@@ -96,11 +96,9 @@ function createForm() {
   field3.appendChild(input);
   field3.appendChild(createEl({ elTag: "span", elTxt: "Enter your message" }));
 
-  input = createEl({ elTag: "input" });
+  input = createEl({ elTag: "input", elClasses: "form-btn" });
   input.setAttribute("type", "submit");
   input.setAttribute("value", "send");
-  input.classList.add("form-btn");
-  // input.setAttribute("name", "")
   field4.appendChild(input);
 
   form.append(h, field1, field2, field3, field4);
