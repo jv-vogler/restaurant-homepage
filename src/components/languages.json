@@ -18,7 +18,26 @@
         "contact--send-msg": "Send Message",
         "contact--full-name": "Full Name",
         "contact--enter-msg": "Enter your message",
-        "contact--btn-txt": "Send"
+        "contact--btn-txt": "Send",
+        "dish-dsc--uramaki1": "Seaweed/Avocado/Cucumber/Tobiko/Wasabi Mayo",
+        "dish-dsc--uramaki2": "Seaweed/Avocado/Chilli Powder/Tuna/Spicy Mayo",
+        "dish-dsc--uramaki3": "Seaweed/Salmon/Cream Cheese/Seaweed Powder/ Wasabi Mayo",
+        "dish-dsc--uramaki4": "Seaweed/Avocado/Sesame/Tobiko/Chef's Special Mayo",
+
+        "dish-dsc--nigiri1": "Hamachi/Salty Soy Sauce/Wasabi",
+        "dish-dsc--nigiri2": "Tuna/Salty Soy Sauce/Wasabi",
+        "dish-dsc--nigiri3": "Prawn/Seaweed/Salty Soy Sauce/Wasabi",
+        "dish-dsc--nigiri4": "Octopus/Salty Soy Sauce/ Wasabi",
+
+        "dish-dsc--hosomaki1": "Veggie Cucumber",
+        "dish-dsc--hosomaki2": "Cream Cheese",
+        "dish-dsc--hosomaki3": "Tuna",
+        "dish-dsc--hosomaki4": "Salmon",
+
+        "dish-dsc--sashimi1": "Salmon/Salty Soy Sauce/Wasabi",
+        "dish-dsc--sashimi2": "Tuna/Salty Soy Sauce/Wasabi",
+        "dish-dsc--sashimi3": "Salmon/Tuna/Hamachi/Salty Soy Sauce/Wasabi"
+
       }
     },
     "pt": {
@@ -39,7 +58,25 @@
         "contact--send-msg": "Enviar Mensagem",
         "contact--full-name": "Nome Completo",
         "contact--enter-msg": "Digite sua mensagem",
-        "contact--btn-txt": "Enviar"
+        "contact--btn-txt": "Enviar",
+        "dish-dsc--uramaki1": "Alga/Abacate/Pepino/Maionese de Wasabi",
+        "dish-dsc--uramaki2": "Alga/Abacate/Pimenta em pó/Atum/Maionese apimentada",
+        "dish-dsc--uramaki3": "Alga/Salmão/Cream Cheese/Alga em pó/Maionese de Wasabi",
+        "dish-dsc--uramaki4": "Alga/Abacate/Gergelim/Tobiko/Maionese especial do Chefe",
+
+        "dish-dsc--nigiri1": "Hamachi/Molho Shoyu/Wasabi",
+        "dish-dsc--nigiri2": "Atum/Molho Shoyu/Wasabi",
+        "dish-dsc--nigiri3": "Camarão/Alga/Molho Shoyu/Wasabi",
+        "dish-dsc--nigiri4": "Polvo/Molho Shoyu/Wasabi",
+
+        "dish-dsc--hosomaki1": "Pepino Vegetariano",
+        "dish-dsc--hosomaki2": "Cream Cheese",
+        "dish-dsc--hosomaki3": "Atum",
+        "dish-dsc--hosomaki4": "Salmão",
+
+        "dish-dsc--sashimi1": "Salmão/Molho Shoyu/Wasabi",
+        "dish-dsc--sashimi2": "Atum/Molho Shoyu/Wasabi",
+        "dish-dsc--sashimi3": "Salmão/Atum/Hamachi/Molho Shoyu/Wasabi"
       }
     }
   }
