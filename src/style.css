@@ -306,6 +306,7 @@ body {
   font-size: 48px;
   text-transform: uppercase;
   margin-bottom: 25px;
+  animation: move-to-right 1.6s
 }
 
 .card-title::after {
@@ -315,6 +316,7 @@ body {
   width: 100%;
   height: 8px;
   background-color: var(--accent);
+  animation: move-to-left 1.2s .3s backwards
 }
 
 .dish {
@@ -327,16 +329,18 @@ body {
   font-size: 22px;
   font-weight: 700;
   text-transform: uppercase;
+  animation: move-to-right 1.2s
 }
 
 .dish-price {
   font-size: 20px;
   font-weight: 700;
   justify-self: end;
+  animation: move-to-right 1.2s .5s backwards
 }
 
 .dish-description {
-  /* max-width: 400px; */
+  animation: move-to-left 1.2s
 }
 
 .currency {

@@ -190,11 +190,6 @@ function createDish(dishName, dishDescription, dishPrice, data) {
     elClasses: "dish",
   });
 
-  // const wrap = createEl({
-  //   elTag: "div",
-  //   elClasses: "dish-wrap"
-  // })
-
   const name = createEl({
     elTag: "h3",
     elClasses: "dish-name",
@@ -206,7 +201,6 @@ function createDish(dishName, dishDescription, dishPrice, data) {
     elTag: "p",
     elClasses: "dish-price",
     elHTML: `<span class="currency">R$</span> ${dishPrice}`,
-    // dataAttr: data.price,
   });
 
   const description = createEl({
@@ -216,7 +210,6 @@ function createDish(dishName, dishDescription, dishPrice, data) {
     dataAttr: { key: data.description },
   });
 
-  // wrap.append(name, price)
   dish.append(name, price, description);
   return dish;
 }
