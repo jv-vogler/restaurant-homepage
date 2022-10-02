@@ -21,6 +21,7 @@ export const changeMainContent = (page) => {
     nav.childNodes[0].classList.add("active");
   } else if (page === "MENU") {
     MAIN.appendChild(Menu());
+    setupSwiper();
     nav.childNodes[1].classList.add("active");
   } else if (page === "CONTACT") {
     MAIN.appendChild(Contact());
@@ -78,7 +79,7 @@ export const firstLetter = (letter) => {
 
 const animate = function () {
   timeline = gsap.timeline({ repeat: -1 });
-  
+
   timeline.from(".image", { duration: 2, x: 1000, ease: "circ" });
   timeline.from(".image", { duration: 2, x: 0, ease: "expo.in" }, "+=3");
 
@@ -90,4 +91,20 @@ const animate = function () {
   timeline.from(".image", { duration: 2, x: 1000, ease: "circ" });
   timeline.from(".image", { duration: 2, x: 0, ease: "expo.in" }, "+=3");
   timeline.set(".image", { attr: { src: "../src/images/pic1.png" } });
+};
+
+const setupSwiper = function () {
+  const swiper = new Swiper(".menuSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
 };
