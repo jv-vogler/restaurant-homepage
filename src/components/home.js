@@ -1,4 +1,5 @@
 import { createEl, changeMainContent } from "./utils";
+import pic1 from "../images/pic1.png";
 
 export default function Home() {
   const wrapper = createEl({
@@ -49,7 +50,7 @@ const createPicture = () => {
     elTag: "img",
     elClasses: "image",
   });
-  img.src = "../src/images/pic1.png";
+  img.src = pic1;
   img.alt = "japanese food picture";
 
   return img;

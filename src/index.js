@@ -1,7 +1,5 @@
 import "./style.css";
 import Home from "./components/home";
-import Menu from "./components/menu";
-import Contact from "./components/contact";
 import { setLanguage } from "./components/language";
 import { createEl, changeMainContent, firstLetter } from "./components/utils";
 

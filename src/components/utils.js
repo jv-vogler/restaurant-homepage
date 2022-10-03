@@ -1,6 +1,9 @@
 import Home from "./home";
 import Menu from "./menu";
 import Contact from "./contact";
+import pic1 from "../images/pic1.png";
+import pic2 from "../images/pic2.png";
+import pic3 from "../images/pic3.png";
 
 let timeline = null;
 
@@ -83,14 +86,14 @@ const animate = function () {
   timeline.from(".image", { duration: 2, x: 1000, ease: "circ" });
   timeline.from(".image", { duration: 2, x: 0, ease: "expo.in" }, "+=3");
 
-  timeline.set(".image", { attr: { src: "../src/images/pic2.png" } });
+  timeline.set(".image", { attr: { src: pic2 } });
   timeline.from(".image", { duration: 2, x: 1000, ease: "circ" });
   timeline.from(".image", { duration: 2, x: 0, ease: "expo.in" }, "+=3");
 
-  timeline.set(".image", { attr: { src: "../src/images/pic3.png" } });
+  timeline.set(".image", { attr: { src: pic3 } });
   timeline.from(".image", { duration: 2, x: 1000, ease: "circ" });
   timeline.from(".image", { duration: 2, x: 0, ease: "expo.in" }, "+=3");
-  timeline.set(".image", { attr: { src: "../src/images/pic1.png" } });
+  timeline.set(".image", { attr: { src: pic1 } });
 };
 
 const setupSwiper = function () {
